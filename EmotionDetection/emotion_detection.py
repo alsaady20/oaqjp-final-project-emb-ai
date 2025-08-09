@@ -9,7 +9,7 @@ def emotion_detector(text_to_analyse):
 
     input_json = { "raw_document": { "text": text_to_analyse } }
 
-    response = requests.post(url, headers=headers, json=input_json)
+    response = requests.post(url, headers=headers, json=input_json, timeout=60)
 
     if response.status_code == 400:
         return {
